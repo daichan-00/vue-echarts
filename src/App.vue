@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+    <h2>echarts用例</h2>
+    <BarChart />
+    <PieChart />
+    <LineChart />
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import BarChart from "./components/BarChart";
+import PieChart from "./components/PieChart";
+import LineChart from "./components/LineChart";
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    BarChart,
+    PieChart,
+    LineChart,
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style lang="less">
+.app {
+  background: #283b42;
+  box-sizing: border-box;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #fff;
+  padding: 10px;
+  & > .chart {
+    display: flex;
+    margin-bottom: 4px;
+    & > div:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
 }
 </style>
